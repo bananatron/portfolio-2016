@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="spenser.xyz">
+
+  <title>Spenser Coke - Design & Development</title>
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/images/favicon-96x96.png">
+  <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,300' rel="stylesheet" type="text/css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet" type="text/css">
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" rel="stylesheet" type="text/css">
+  <link href="assets/css/styles.css" rel="stylesheet" type="text/css">
+
+</head>
+
+<body>
+  <section id="hero">
+    <div id="nav">
+      <!-- <button class="button-primary">My story</button>
+      <button class="button-primary">Recent Projects</button> -->
+    </div>
+    <div class="bottom-gradient"></div>
+    <div class="logo-container">
+      <div class="logo">spenser coke</div>
+      <div class="logo-sub-container">
+        <div class="logo-sub logo-sub__construct">software</div>
+        <div class="logo-sub logo-sub__role">engineer</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="content">
+    <div class="container">
+
+      <div class="content-tagline">
+        I <strong>love</strong> building products.
+      </div>
+
+      <p>I've been working with the web for many moons and take pleasure in
+      making simple, pleasurable experiences. I'm currently in San Francisco
+      working with <a href="http://hired.com" target="_blank">Hired</a> to help get everyone a job they love.
+
+      <p>There's always more to learn and more to do.
+
+      <div id="social-links">
+        <a href="https://www.linkedin.com/in/spenser-coke-b224a36b" target="_blank">
+          <i class="icon ion-social-linkedin"></i>
+        </a>
+        <a href="http://github.com/bananatron" target="_blank">
+          <i class="icon ion-social-github"></i>
+        </a>
+        <a href="http://dribbble.com/spensercoke" target="_blank">
+          <i class="icon ion-social-dribbble-outline"></i>
+        </a>
+        <a href="http://codepen.io/spenser/" target="_blank">
+          <i class="icon ion-social-codepen"></i>
+        </a>
+        <a href="http://twitter.com/spenser" target="_blank">
+          <i class="icon ion-social-twitter"></i>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+<script>
+
+  Array.prototype.randomElement = function () {
+      return this[Math.floor(Math.random() * this.length)]
+  }
+
+  var background_images = ['sc_pink.jpg', 'sc_blue.jpg'];
+  var construct_list = ['software', 'game', 'product', 'ui'];
+  var role_list = ['engineer', 'designer', 'developer'];
+
+  var changeText = function changeText(text_type){
+    if (text_type == 'construct'){
+      var cc = construct_list.randomElement();
+    } else if(text_type == 'role'){
+      var cc = role_list.randomElement();
+    }
+    var $applied_class = $('.logo-sub__' + text_type);
+    if (cc == $applied_class.text()) return;
+
+    $applied_class.addClass('animated fadeIn');
+    $applied_class.text(cc);
+    setTimeout(function(){
+      $applied_class.removeClass('animated fadeIn');
+    }, 1000)
+  };
+
+  // Randomize background image, yo
+  var $hero = $('#hero');
+  $hero.css('background-image', "url('assets/images/" + background_images.randomElement() + "')");
+  $hero.addClass('animated fadeIn');
+  $hero.show();
+
+  // Let's get this party started
+  setTimeout(function(){
+    setInterval(function(){ changeText('construct') }, 3000);
+  }, 1500);
+  setInterval(function(){ changeText('role') }, 3000);
+
+  var console_style = "font-size: 14px; color:#DA2598; font-family:'Montserrat';"
+  console.log("%cHey there", "color: black; font-family: 'Montserrat'; font-size: 3rem; font-weight: 800;");
+  console.log("%cIf you're serious about getting in touch with me, feel free to shoot me an email", console_style);
+  console.log("%cwork @ spensercoke.com", console_style + "color:black;");
+  console.log("%c♥", console_style);
+
+</script>
