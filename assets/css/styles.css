@@ -53,7 +53,10 @@ a {
   letter-spacing: -0.5px;
   font-family: 'Montserrat', sans-serif;
   -webkit-transition: all 0.2s ease-in-out;
-  transition: all 0.2s ease-in-out;
+  transition: all 1s ease-in-out;
+}
+.logo:hover, .logo:focus {
+  letter-spacing: 2px;
 }
 
 .logo-sub-container {
@@ -99,9 +102,10 @@ a {
   display: inline-block;
   padding: 0 1rem;
   text-align: center;
+  transition: all 0.15s ease-in-out;
 }
 .icon:hover, .icon:focus {
-  color: rgba(255, 255, 255, 0.5);
+  color: #C91D55;
 }
 
 button {
@@ -135,4 +139,64 @@ button:hover, button:focus {
   .logo-sub {
     font-size: 2rem;
   }
+}
+
+
+/* Resume Styles */
+
+.job-entry {
+  padding: 1.5rem 2rem;
+  background-color: white;
+  color: black;
+  margin-bottom: 1rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.job-entry__employer {
+  font-weight: bold;
+  font-size: 2.5rem;
+  line-height: 3rem;
+}
+.job-entry__location {
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.job-entry__date {
+  font-size: 1.4rem;
+}
+.job-entry__summary {
+  margin: 1rem 0;
+}
+
+.section-header {
+  font-size: 3.5rem;
+  line-height: 4rem;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.section-subheader {
+  text-transform: uppercase;
+  margin-bottom: -1rem;
+}
+
+.show-deep {
+  display: inline-block;
+  font-size: 1.4rem;
+  letter-spacing: 0.5px;
+  padding: 0 0.6rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
+  cursor: pointer;
+  transition: all 0.1s ease-in-out;
+}
+.show-deep:focus, .show-deep:hover {
+  color: white;
+  background-color: black;
+}
+.u-light {
+  color: rgba(0, 0, 0, 0.5);
 }

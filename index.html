@@ -69,51 +69,51 @@
     </div>
   </section>
 
-</body>
+  <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+  <script>
 
-<script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
-<script>
-
-  Array.prototype.randomElement = function () {
-      return this[Math.floor(Math.random() * this.length)]
-  }
-
-  var background_images = ['sc_pink.jpg', 'sc_blue.jpg'];
-  var construct_list = ['software', 'game', 'product', 'ui'];
-  var role_list = ['engineer', 'designer', 'developer'];
-
-  var changeText = function changeText(text_type){
-    if (text_type == 'construct'){
-      var cc = construct_list.randomElement();
-    } else if(text_type == 'role'){
-      var cc = role_list.randomElement();
+    Array.prototype.randomElement = function () {
+        return this[Math.floor(Math.random() * this.length)]
     }
-    var $applied_class = $('.logo-sub__' + text_type);
-    if (cc == $applied_class.text()) return;
 
-    $applied_class.addClass('animated fadeIn');
-    $applied_class.text(cc);
+    var background_images = ['sc_pink.jpg', 'sc_blue.jpg'];
+    var construct_list = ['software', 'game', 'product', 'ui'];
+    var role_list = ['engineer', 'designer', 'developer'];
+
+    var changeText = function changeText(text_type){
+      if (text_type == 'construct'){
+        var cc = construct_list.randomElement();
+      } else if(text_type == 'role'){
+        var cc = role_list.randomElement();
+      }
+      var $applied_class = $('.logo-sub__' + text_type);
+      if (cc == $applied_class.text()) return;
+
+      $applied_class.addClass('animated fadeIn');
+      $applied_class.text(cc);
+      setTimeout(function(){
+        $applied_class.removeClass('animated fadeIn');
+      }, 1000)
+    };
+
+    // Randomize background image, yo
+    var $hero = $('#hero');
+    $hero.css('background-image', "url('assets/images/" + background_images.randomElement() + "')");
+    $hero.addClass('animated fadeIn');
+    $hero.show();
+
+    // Let's get this party started
     setTimeout(function(){
-      $applied_class.removeClass('animated fadeIn');
-    }, 1000)
-  };
+      setInterval(function(){ changeText('construct') }, 3000);
+    }, 1500);
+    setInterval(function(){ changeText('role') }, 3000);
 
-  // Randomize background image, yo
-  var $hero = $('#hero');
-  $hero.css('background-image', "url('assets/images/" + background_images.randomElement() + "')");
-  $hero.addClass('animated fadeIn');
-  $hero.show();
+    var console_style = "font-size: 14px; color:#DA2598; font-family:'Montserrat';"
+    console.log("%cHey there", "color: black; font-family: 'Montserrat'; font-size: 3rem; font-weight: 800;");
+    console.log("%cIf you're serious about getting in touch with me, feel free to shoot me an email", console_style);
+    console.log("%cwork @ spensercoke.com", console_style + "color:black;");
+    console.log("%c♥", console_style);
 
-  // Let's get this party started
-  setTimeout(function(){
-    setInterval(function(){ changeText('construct') }, 3000);
-  }, 1500);
-  setInterval(function(){ changeText('role') }, 3000);
+  </script>
 
-  var console_style = "font-size: 14px; color:#DA2598; font-family:'Montserrat';"
-  console.log("%cHey there", "color: black; font-family: 'Montserrat'; font-size: 3rem; font-weight: 800;");
-  console.log("%cIf you're serious about getting in touch with me, feel free to shoot me an email", console_style);
-  console.log("%cwork @ spensercoke.com", console_style + "color:black;");
-  console.log("%c♥", console_style);
-
-</script>
+</body>
