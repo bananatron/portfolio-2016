@@ -202,33 +202,38 @@
   <script src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
   <script>
 
-    //Real talk links
-    var $deepsummary = $('.job-entry__deepsummary');
-    $deepsummary.parent().append("<div class='show-deep'>Real Talk</div>");
-    $deepsummary.attr('data-status', 'hidden');
-    $deepsummary.hide();
+    function init(){
 
-    $('.show-deep').on('click', function(){
+      //Real talk links
+      var $deepsummary = $('.job-entry__deepsummary');
+      $deepsummary.parent().append("<div class='show-deep'>Real Talk</div>");
+      $deepsummary.attr('data-status', 'hidden');
+      $deepsummary.hide();
 
-      $dpp = $(this).parent().find('.job-entry__deepsummary');
-      console.log($dpp.attr('data-status'));
-      if ($dpp.attr('data-status') == 'hidden'){
-        $dpp.attr('data-status', 'shown');
-        $dpp.show();
-        $(this).text('Too real');
-      } else {
-        $dpp.attr('data-status', 'hidden');
-        $dpp.hide();
-        $(this).text('Real talk');
-      }
+      $('.show-deep').on('click', function(){
 
-    });
+        $dpp = $(this).parent().find('.job-entry__deepsummary');
+        console.log($dpp.attr('data-status'));
+        if ($dpp.attr('data-status') == 'hidden'){
+          $dpp.attr('data-status', 'shown');
+          $dpp.show();
+          $(this).text('Too real');
+        } else {
+          $dpp.attr('data-status', 'hidden');
+          $dpp.hide();
+          $(this).text('Real talk');
+        }
 
-    var console_style = "font-size: 14px; color:#DA2598; font-family:'Montserrat';"
-    console.log("%cHey there", "color: black; font-family: 'Montserrat'; font-size: 3rem; font-weight: 800;");
-    console.log("%cIf you're serious about getting in touch with me, feel free to shoot me an email", console_style);
-    console.log("%cwork @ spensercoke.com", console_style + "color:black;");
-    console.log("%c♥", console_style);
+      });
+
+      var console_style = "font-size: 14px; color:#DA2598; font-family:'monospace';"
+      console.log("%cHey there", "color: black; font-family: 'monospace'; font-size: 3rem; font-weight: 800;");
+      console.log("%cIf you're serious about getting in touch with me, feel free to shoot me an email", console_style);
+      console.log("%cwork @ spensercoke.com", console_style + "color:black;");
+      console.log("%c♥", console_style);
+
+    };
+    init();
 
   </script>
 
