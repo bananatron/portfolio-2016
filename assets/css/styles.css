@@ -5,6 +5,9 @@ html, body {
   background-color: black;
   font-size: 10px;
   line-height: 2.5rem;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
@@ -55,9 +58,7 @@ a {
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 1s ease-in-out;
 }
-.logo:hover, .logo:focus {
-  letter-spacing: 2px;
-}
+.logo:hover, .logo:focus { letter-spacing: 2px; }
 
 .logo-sub-container {
   -webkit-transition: all 0.2s ease-in-out;
@@ -74,10 +75,8 @@ a {
   letter-spacing: 2px;
   font-family: monospace;
 }
+.logo-sub:first-child { margin-right: 1rem; }
 
-.logo-sub:first-child {
-  margin-right: 1rem;
-}
 #content {
   margin-left: 5%;
   margin-right: 5%;
@@ -104,9 +103,7 @@ a {
   text-align: center;
   transition: all 0.15s ease-in-out;
 }
-.icon:hover, .icon:focus {
-  color: #C91D55;
-}
+.icon:hover, .icon:focus { color: #C91D55; }
 
 button {
   border: 0;
@@ -120,25 +117,19 @@ button {
   -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
-button:hover, button:focus {
-  background-color: rgba(0, 0, 0, 0);
-}
+button:hover, button:focus { background-color: rgba(0, 0, 0, 0); }
 
 @media (min-width: 640px) {
   #nav, #content {
     margin-left: 10%;
     margin-right: 10%;
   }
-  .logo-container {
-    left: 10%;
-  }
   .logo {
     font-size: 6rem;
     line-height: 7rem;
   }
-  .logo-sub {
-    font-size: 2rem;
-  }
+  .logo-container { left: 10%; }
+  .logo-sub { font-size: 2rem; }
 }
 
 
@@ -157,14 +148,17 @@ button:hover, button:focus {
   font-size: 2.5rem;
   line-height: 3rem;
 }
+
 .job-entry__location {
   font-size: 1.4rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
+
 .job-entry__date {
   font-size: 1.4rem;
 }
+
 .job-entry__summary {
   margin: 1rem 0;
 }
@@ -177,6 +171,7 @@ button:hover, button:focus {
   text-transform: uppercase;
   letter-spacing: 1px;
 }
+
 .section-subheader {
   text-transform: uppercase;
   margin-bottom: -1rem;
@@ -193,10 +188,10 @@ button:hover, button:focus {
   cursor: pointer;
   transition: all 0.1s ease-in-out;
 }
+
 .show-deep:focus, .show-deep:hover {
   color: white;
   background-color: black;
 }
-.u-light {
-  color: rgba(0, 0, 0, 0.5);
-}
+
+.u-light { color: rgba(0, 0, 0, 0.5); }
